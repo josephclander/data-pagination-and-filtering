@@ -75,3 +75,23 @@ const searchbar = `<label for="search" class="student-search">
                      <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
                   </label>`;
 header.insertAdjacentHTML('beforeend', searchbar);
+
+// implement search
+const searchInput = document.querySelector('#search');
+const searchButton = searchInput.nextElementSibling;
+searchButton.addEventListener('click', () => {
+  search(data);
+});
+
+/**
+ * search function to filter data for matching names
+ * @param {array} list
+ */
+function search(list) {
+  const searchText = searchInput.value;
+  let filtered = list.filter((student) => {
+    const fullName = `${student.name.first} ${student.name.last}`;
+    return fullName.match(searchText);
+  });
+  showPage(filtered, 1);
+}
