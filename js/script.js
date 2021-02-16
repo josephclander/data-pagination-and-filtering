@@ -46,17 +46,18 @@ function addPagination(list) {
                </li>`;
     ul.insertAdjacentHTML('beforeend', li);
   }
-  // give active class to first list element
-  ul.firstElementChild.className = 'active';
+  // give active class to first button element
+  ul.firstElementChild.firstElementChild.className = 'active';
   ul.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
-      const selectedPage = e.target.textContent;
-      const selectedLi = e.target.parentNode;
+      const button = e.target;
+      const selectedPage = button.textContent;
       const listItems = ul.children;
       for (let li of listItems) {
-        li.className = '';
+        // select button element
+        li.firstElementChild.className = '';
       }
-      selectedLi.className = 'active';
+      button.className = 'active';
       showPage(data, selectedPage);
     }
   });
