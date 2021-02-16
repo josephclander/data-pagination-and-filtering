@@ -93,6 +93,22 @@ function search(list) {
     const fullName = `${student.name.first} ${student.name.last}`;
     return fullName.match(searchText);
   });
-  showPage(filtered, 1);
-  addPagination(filtered);
+  // check for no results
+  const page = document.querySelector('.page');
+  if (filtered.length > 0) {
+    // check for previous "no results" text and remove
+    const noResultsElement = document.querySelector('.no-results');
+    if (noResultsElement) page.removeChild(noResultsElement);
+    showPage(filtered, 1);
+    addPagination(filtered);
+  } else {
+    // clear lists
+    const studentList = document.querySelector('.student-list');
+    const linkList = document.querySelector('.link-list');
+    studentList.innerHTML = '';
+    linkList.innerHTML = '';
+    // add "no results" message to page
+    const noResultsText = `<div class="no-results">No results found</div>`;
+    page.insertAdjacentHTML('beforeend', noResultsText);
+  }
 }
