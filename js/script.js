@@ -40,6 +40,31 @@ function showPage(list, page) {
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
+function addPagination(list) {
+  const numberOfPages = Math.ceil(list.length / 9);
+  const ul = document.querySelector('.link-list');
+  ul.innerHTML = '';
+  for (let i = 0; i < numberOfPages; i++) {
+    let li = `<li>
+                  <button type="button">${i + 1}</button>
+               </li>`;
+    ul.insertAdjacentHTML('beforeend', li);
+  }
+  ul.firstElementChild.className = 'active';
+  ul.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+      const selectedPage = e.target.textContent;
+      const selectedLi = e.target.parentNode;
+      const listItems = ul.children;
+      for (let li of listItems) {
+        li.className = '';
+      }
+      selectedLi.className = 'active';
+      showPage(data, selectedPage);
+    }
+  });
+}
 
 // Call functions
-showPage(data, 2);
+showPage(data, 1);
+addPagination(data);
