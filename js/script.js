@@ -94,4 +94,5 @@ function search(list) {
     return fullName.match(searchText);
   });
   showPage(filtered, 1);
+  addPagination(filtered);
 }
