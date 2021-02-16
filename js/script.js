@@ -1,18 +1,13 @@
-/*
-Treehouse Techdegree:
-FSJS Project 2 - Data Pagination and Filtering
-*/
+/**
+ * Treehouse Techdegree:
+ * FSJS Project 2 - Data Pagination and Filtering
+ */
 
-/*
-For assistance:
-   Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
-   Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
-*/
-
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
+/**
+ * create and append 9 list items to ul in document
+ * @param {array} list
+ * @param {number} page
+ */
 function showPage(list, page) {
   const startIndex = page * 9 - 9;
   const endIndex = page * 9;
@@ -20,6 +15,7 @@ function showPage(list, page) {
   ul.innerHTML = '';
   for (let i = 0; i < list.length; i++) {
     const student = list[i];
+    // check the student is in the page range
     if (i >= startIndex && i < endIndex) {
       let text = `<li class="student-item cf">
             <div class="student-details">
@@ -36,10 +32,10 @@ function showPage(list, page) {
   }
 }
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
+/**
+ * create list of buttons updating active selection
+ * @param {array} list
+ */
 function addPagination(list) {
   const numberOfPages = Math.ceil(list.length / 9);
   const ul = document.querySelector('.link-list');
@@ -50,6 +46,7 @@ function addPagination(list) {
                </li>`;
     ul.insertAdjacentHTML('beforeend', li);
   }
+  // give active class to first list element
   ul.firstElementChild.className = 'active';
   ul.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
@@ -65,6 +62,5 @@ function addPagination(list) {
   });
 }
 
-// Call functions
 showPage(data, 1);
 addPagination(data);
