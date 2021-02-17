@@ -1,6 +1,6 @@
 # Project 2: Data Pagination and Filtering
 
-# Project Overview
+## Project Overview
 
 In this project from Treehouse, you'll use a common web development technique known as “pagination” to enhance the usability of a web page.
 
@@ -8,7 +8,15 @@ You'll start with a file that contains information for 42 students, including na
 
 Your application will need to work with a list of any number of students, not just with the supplied array of 42 students. This means your solutions need to be flexible enough to handle arrays of student data of various lengths.
 
-# Instructions
+## Table of Contents
+
+[Instructions](#instructions)
+
+[Extra Credit](#extra-credit)
+
+[Testing](#testing)
+
+## Instructions
 
 1. Display a “page”
 
@@ -87,7 +95,7 @@ Your application will need to work with a list of any number of students, not ju
      - Pretend to be a user and test all aspects of functionality and every possible state of the app, while monitoring the console for bugs and resolving any that arise.
    - Cross Browser Consistency - To pass, your project only needs to work in Chrome but it’s common for developers to test their projects in multiple browsers to know how they will perform out in the wild.
 
-# Extra Credit
+## Extra Credit
 
 1. Add a Search Component
 
@@ -114,6 +122,6 @@ Your application will need to work with a list of any number of students, not ju
    - If no matches are found for a search, display a “No results found” type message on the page.
    - Note: Don't use the built in alert() method for this. The "No results found" message should be printed to the page.
 
-# Testing
+## Testing
 
 Tested with no notable issues on the following browsers: Chrome 88, Safari 14.02 and Firefox 86.0b9.
