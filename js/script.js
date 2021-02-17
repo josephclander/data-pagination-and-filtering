@@ -94,9 +94,9 @@ function addPagination(list) {
  * @param {array} list
  */
 function search(list) {
-  const searchText = searchInput.value;
-  let filtered = list.filter((student) => {
-    const fullName = `${student.name.first} ${student.name.last}`;
+  const searchText = searchInput.value.toLowerCase();
+  const filtered = list.filter((student) => {
+    const fullName = `${student.name.first.toLowerCase()} ${student.name.last.toLowerCase()}`;
     return fullName.match(searchText);
   });
   // reset message box
