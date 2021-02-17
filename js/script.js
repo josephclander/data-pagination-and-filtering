@@ -84,7 +84,7 @@ function addPagination(list) {
       }
       // selected button becomes active
       button.className = 'active';
-      showPage(data, selectedPage);
+      showPage(list, selectedPage);
     }
   });
 }
