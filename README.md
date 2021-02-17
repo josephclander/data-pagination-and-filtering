@@ -105,3 +105,7 @@
 
    - If no matches are found for a search, display a “No results found” type message on the page.
    - Note: Don't use the built in alert() method for this. The "No results found" message should be printed to the page.
+
+# Testing
+
+Tested with no notable issues on the following browsers: Chrome 88, Safari 14.02 and Firefox 86.0b9.
